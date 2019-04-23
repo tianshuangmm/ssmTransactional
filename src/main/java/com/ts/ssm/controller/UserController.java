@@ -16,4 +16,9 @@ public class UserController {
     public User getUserById(/*Integer id*/) {
         return userService.getUserById(1);
     }
+    @RequestMapping(value = "/tx")
+    public void transactionTest(){
+        userService.getUserById(1);
+       // userService.addUser();
+    }
 }

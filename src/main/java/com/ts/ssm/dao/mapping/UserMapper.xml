@@ -7,4 +7,7 @@
         FROM user
         WHERE id = #{id}
     </select>
+    <insert id="getUserById"  parameterType="User">
+        INSERT INTO user (id, username, sex, date, age) VALUES (#{id}, #{username}, #{sex}, #{date}, #{age});
+    </insert>
 </mapper>
