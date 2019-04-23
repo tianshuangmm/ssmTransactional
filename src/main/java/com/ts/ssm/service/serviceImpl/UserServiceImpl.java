@@ -12,6 +12,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     public User getUserById(Integer id) {
+
         return userMapper.getUserById(id);
     }
 }
