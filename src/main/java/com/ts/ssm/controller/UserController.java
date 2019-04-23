@@ -19,6 +19,6 @@ public class UserController {
     @RequestMapping(value = "/tx")
     public void transactionTest(){
         userService.getUserById(1);
-       // userService.addUser();
+        userService.addUser(new User(2,"1","2",1,null));
     }
 }

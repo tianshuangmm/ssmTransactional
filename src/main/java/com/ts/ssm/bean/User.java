@@ -11,6 +11,14 @@ public class User {
     private Integer age;
     private Date date;
 
+    public User(Integer id, String userName, String sex, Integer age, Date date) {
+        this.id = id;
+        this.userName = userName;
+        this.sex = sex;
+        this.age = age;
+        this.date = date;
+    }
+
     public Integer getId() {
         return id;
     }
