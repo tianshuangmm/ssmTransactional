@@ -60,17 +60,17 @@
     </bean>
 
     <!--配置事务管理器，需要提供连接池属性-->
-    <bean id = "transactionManager"
-          class = "org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <bean id = "transactionManager" class = "org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name = "dataSource" ref = "dataSource" />
     </bean>
-    <tx:advice transaction-manager="transactionManager" id="tx_transactionManager">
+    <tx:advice id="tx_transactionManager" transaction-manager="transactionManager" >
         <tx:attributes>
-            <tx:method name="tx_advice" propagation="REQUIRES_NEW"/>
+            <!--read-only="true"-->
+            <tx:method name="*" propagation="REQUIRED"  no-rollback-for="java.lang.ArithmeticException"/>
         </tx:attributes>
     </tx:advice>
     <aop:config>
-        <aop:pointcut id="tx_pointcut" expression="execution(* com.ts.ssm.service.*.*(..))"></aop:pointcut>
+        <aop:pointcut id="tx_pointcut" expression="execution(* com.ts.ssm.service.serviceImpl..*(..))"></aop:pointcut>
         <aop:advisor advice-ref="tx_transactionManager" pointcut-ref="tx_pointcut"  ></aop:advisor>
     </aop:config>
     <!-- 使用注解定义事务 -->

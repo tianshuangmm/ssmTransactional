@@ -11,8 +11,10 @@ public class User {
     private Integer age;
     private Date date;
 
-    public User(Integer id, String userName, String sex, Integer age, Date date) {
-        this.id = id;
+    public User() {
+    }
+
+    public User( String userName, String sex, Integer age, Date date) {
         this.userName = userName;
         this.sex = sex;
         this.age = age;

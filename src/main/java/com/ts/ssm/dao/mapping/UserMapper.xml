@@ -7,7 +7,13 @@
         FROM user
         WHERE id = #{id}
     </select>
-    <insert id="getUserById"  parameterType="User">
-        INSERT INTO user (id, username, sex, date, age) VALUES (#{id}, #{username}, #{sex}, #{date}, #{age});
+    <!-- 插入statement
+        useGeneratedKeys：开启主键回写
+        keyColumn：主键列名(既数据库表中的列名)
+        keyProperty：主键对应的属性名（实体中的属性名）
+        插入数据时，传过来的参数是一个对象，#{***}中的名字必须与对象中属性名一致
+    -->
+    <insert id="addUser"  parameterType="User" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO user ( user_name, sex, date, age) VALUES ( #{userName}, #{sex}, #{date}, #{age})
     </insert>
 </mapper>

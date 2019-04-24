@@ -18,6 +18,20 @@ public class UserServiceImpl implements UserService {
 
     public void addUser(User user) {
          int i =1/0;
-         userMapper.addUser(user);
+        Integer integer = userMapper.addUser(user);
+        System.out.println(integer);
+    }
+
+    public void addUser2() {
+
+        User user= userMapper.getUserById(16);
+        System.out.println("[执行了tx1]"+user.getUserName());
+        System.out.println("执行了tx2  tx2添加");
+        userMapper.addUser(new User("tx2","2",1,null));
+        int i=1/0;
+        System.out.println("执行了tx2  tx1添加");
+        userMapper.addUser(new User("tx1","2",1,null));
+
+
     }
 }
