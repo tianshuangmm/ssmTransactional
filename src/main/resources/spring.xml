@@ -12,7 +12,7 @@
     <!-- 自动扫描 -->
     <!--<context:include-filter>和<context:exclude-filter>各代表引入和排除的过滤。-->
     <context:component-scan base-package="com.ts.ssm" use-default-filters="true">
-        <!--controller注解别ioc管理-->
+        <!--controller注解由ioc管理-->
         <context:include-filter  type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
