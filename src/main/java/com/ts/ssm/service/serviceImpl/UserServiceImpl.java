@@ -10,9 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 /*
-* 除此以外，@Transactional 注解也可以添加到类级别上。
-* 当把@Transactional 注解放在类级别时，表示所有该类的公共方法都配置相同的事务属性信息。
-* EmployeeService 的所有方法都支持事务并且是只读。
+*
 * 当类级别配置了@Transactional，方法级别也配置了@Transactional，
 * 应用程序会以方法级别的事务属性信息来管理事务，
 * 换言之，方法级别的事务属性信息会覆盖类级别的相关配置信息。
