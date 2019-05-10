@@ -10,3 +10,11 @@
 方式一：基于TransactionProxyFactoryBean(一般不使用)；
 方式二：基于AspectJ(使用)：不需要修改代码，只需添加配置文件信息
 方式三：基于注解：在配置文件中开启事务启动，在调用事务的类中添加@Transactional
+
+spring和mybatis整合采用
+SqlSessionFactoryBean来替代SqlSessionFactoryBuilder来创建SqlSession
+
+采用数据映射器（MapperFactoryBean）的方式
+解释：https://blog.csdn.net/liuxiao723846/article/details/52423152
+采用mybatis映射文件
+
