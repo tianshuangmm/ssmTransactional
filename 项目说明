@@ -16,5 +16,6 @@ SqlSessionFactoryBean来替代SqlSessionFactoryBuilder来创建SqlSession
 
 采用数据映射器（MapperFactoryBean）的方式
 解释：https://blog.csdn.net/liuxiao723846/article/details/52423152
+https://xh32t03.iteye.com/blog/2024094
 采用mybatis映射文件
 
